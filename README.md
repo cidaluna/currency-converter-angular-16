@@ -2,7 +2,7 @@
 
 Este projeto foi desenvolvido com o [Angular CLI](https://github.com/angular/angular-cli) versão 16.2.0 e Node.JS versão 18.10.0.
 
-Verifique a compatibilidade do Angular x Node.JS em [Angular](https://angular.io/guide/versions).
+Verifique a compatibilidade do Angular x Node.JS em [Angular versions](https://angular.io/guide/versions).
 
 ![Página Web com três cards representando o resultado de conversão de moedas retornados via API](https://github.com/cidaluna/currency-converter-angular-16/blob/main/src/assets/tela-inicial-currency-converter-Angular.PNG)
 
@@ -47,11 +47,11 @@ Após rodar o start, abra o navegador e visite o link http://localhost:4200 para
 ## API de Cotações
 
 Exemplos:
-http://economia.awesomeapi.com.br/json/last/USD-BRL
-http://economia.awesomeapi.com.br/json/last/USD-BRL,EUR-BRL,BTC-BRL
+* http://economia.awesomeapi.com.br/json/last/USD-BRL
+* http://economia.awesomeapi.com.br/json/last/USD-BRL,EUR-BRL,BTC-BRL
 
-http://economia.awesomeapi.com.br/xml/USD-BRL/1
-http://economia.awesomeapi.com.br/USD-BRL/1?format=xml
+* http://economia.awesomeapi.com.br/xml/USD-BRL/1
+* http://economia.awesomeapi.com.br/USD-BRL/1?format=xml
 
 ## Legenda API de Cotações
 
