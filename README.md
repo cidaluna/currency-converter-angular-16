@@ -40,11 +40,32 @@ npm install
 npm start
 ```
 
-## Navegando pelo projeto
+## Navegando pelo projeto Angular 16
 
 Após rodar o start, abra o navegador e visite o link http://localhost:4200 para visualizar a aplicação Currency Converter.
 
-## Testes unitários
+## API de Cotações
+
+Exemplos:
+http://economia.awesomeapi.com.br/json/last/USD-BRL
+http://economia.awesomeapi.com.br/json/last/USD-BRL,EUR-BRL,BTC-BRL
+
+http://economia.awesomeapi.com.br/xml/USD-BRL/1
+http://economia.awesomeapi.com.br/USD-BRL/1?format=xml
+
+## Legenda API de Cotações
+
+| Key | Label |
+| --- | --- |
+| bid | Compra |
+| ask | Venda |
+| varBid | Variação |
+| pctChange | Porcentagem de Variação |
+| high | Máximo |
+| low | Mínimo |
+
+
+## Testes unitários 
 
 Utilize o comando `ng test` para executar os testes unitários dessa aplicação via [Karma](https://karma-runner.github.io).
 
@@ -58,7 +79,7 @@ Comandos
 ```bash
 npm install -g @angular/cli@16.2.0
 npm install -g npx
-npx @angular/cli@16 ng new nome-do-seu-projeto
+npx @angular/cli@16 new nome-do-seu-projeto
 ```
 
 ## Exemplo de primeiro commit no GitHub
