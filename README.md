@@ -1,7 +1,7 @@
 # Desafio Currency Converter
 
--Este projeto foi desenvolvido com o [Angular CLI](https://github.com/angular/angular-cli) versão 16.2.0 e Node.JS versão 18.10.0.
--Verifique a compatibilidade do Angular x Node.JS em [Angular](https://angular.io/guide/versions).
+Este projeto foi desenvolvido com o [Angular CLI](https://github.com/angular/angular-cli) versão 16.2.0 e Node.JS versão 18.10.0.
+Verifique a compatibilidade do Angular x Node.JS em [Angular](https://angular.io/guide/versions).
 
 ![Página Web com três cards representando o resultado de conversão de moedas retornados via API](https://github.com/cidaluna/currency-converter-angular-16/blob/main/src/assets/tela-inicial-currency-converter-Angular.PNG)
 
