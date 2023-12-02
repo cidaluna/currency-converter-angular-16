@@ -49,6 +49,7 @@ Após rodar o start, abra o navegador e visite o link http://localhost:4200 para
 Exemplos:
 * http://economia.awesomeapi.com.br/json/last/USD-BRL
 * http://economia.awesomeapi.com.br/json/last/USD-BRL,EUR-BRL,BTC-BRL
+* https://economia.awesomeapi.com.br/json/last/USD-BRL,CLP-BRL,GBP-BRL
 
 * http://economia.awesomeapi.com.br/xml/USD-BRL/1
 * http://economia.awesomeapi.com.br/USD-BRL/1?format=xml

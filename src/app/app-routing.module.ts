@@ -5,10 +5,7 @@ import { ListarMoedasComponent } from "./components/listar-moedas/listar-moedas.
 const routes: Routes = [
   // cada rota é um endereço url e o nome do componente que deseja exibir na tela
   {
-    path:'', pathMatch: 'full', redirectTo: 'listarMoedas'
-  },
-  {
-    path: 'listarMoedas', component: ListarMoedasComponent
+    path:'', component: ListarMoedasComponent
   }
 ];
 
