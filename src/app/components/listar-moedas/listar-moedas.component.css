@@ -67,7 +67,7 @@ main, .conteudo{
 .body-card{
   display: flex;
   width: auto;
-  height: 43%;
+  height: 52%;
   justify-content: center;
   align-items: center;
 }

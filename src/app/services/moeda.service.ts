@@ -28,9 +28,9 @@ export class MoedaService {
     };
     return this.http.get<Moeda[]>(this.url + this.sigla, httpOptions)
   .pipe(
-    tap(data => {
-      console.log(`Service: Chamou GET na API: ${this.url + this.sigla}`);
-      console.log('Service: Retornou os dados:',JSON.stringify(data));
+    tap((data) => {
+      //console.log(`Service: Chamou GET na API: ${this.url + this.sigla}`);
+      //console.log('Service: Retornou os dados:',JSON.stringify(data));
     }
     ),
     catchError(this.handleError)
@@ -48,7 +48,7 @@ export class MoedaService {
   }
 
   private log(message: string): void{
-    this.mensagemService.add(`Moedas: ${message}!!!`)
+    this.mensagemService.add(`Moedas: ${message}!!`)
   }
 
 }

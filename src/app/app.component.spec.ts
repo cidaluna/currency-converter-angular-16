@@ -12,10 +12,10 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'currency-converter-angular-16'`, () => {
+  it(`should have as title 'Desafio Currency Converter By Cida Luna'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('currency-converter-angular-16');
+    expect(app.title).toEqual('Desafio Currency Converter By Cida Luna');
   });
 
   it('should render title', () => {

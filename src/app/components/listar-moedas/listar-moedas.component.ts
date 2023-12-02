@@ -14,7 +14,7 @@ export class ListarMoedasComponent implements OnInit {
   listaDeMoedas: Moeda[] = [];
 
   constructor(private moedaService: MoedaService){
-    console.log('Componente: Chamou constructor listar-moedas');
+    //console.log('Componente: Chamou constructor listar-moedas');
   }
 
   ngOnInit(): void{
@@ -25,7 +25,11 @@ export class ListarMoedasComponent implements OnInit {
     this.moedaService.getMoeda().subscribe(
       (data: any) => {
         this.listaDeMoedas = Object.keys(data).map(key => data[key]);
-        console.log('Componente: Chamou método obterMoedas com os dados response:',JSON.stringify(data));
+        // testes com console.log
+        //const chaves =  Object.keys(data);
+        //console.log('Componente: Método obterMoedas a partir dos Objetos x Chaves: ', chaves);
+        //const moedasMapeadas = chaves.map(key => data[key]);
+        //console.log('Moedas mapeadas e atribuidas a listaDeMoedas:', moedasMapeadas);
       },
       (error: any) => {
         console.error('Erro ao carregar as moedas', error);

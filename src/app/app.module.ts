@@ -1,18 +1,20 @@
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ListarMoedasComponent } from './components/listar-moedas/listar-moedas.component';
-import { FormatarNumeroPipe } from './pipes/formatar-numero.pipe';
+import { FormatarHorarioPipe, FormatarTextoPipe, FormatarValorPipe } from './pipes/formatar-dados.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListarMoedasComponent,
-    FormatarNumeroPipe
+    FormatarValorPipe,
+    FormatarTextoPipe,
+    FormatarHorarioPipe
   ],
   imports: [
     BrowserModule,
@@ -21,6 +23,7 @@ import { FormatarNumeroPipe } from './pipes/formatar-numero.pipe';
     RouterModule,
     CommonModule
   ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [],
   bootstrap: [AppComponent]
 })

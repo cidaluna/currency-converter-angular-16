@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'currency-converter-angular-16';
+  title = 'Desafio Currency Converter By Cida Luna';
 }

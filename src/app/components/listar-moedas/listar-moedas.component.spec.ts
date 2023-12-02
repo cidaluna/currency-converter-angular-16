@@ -1,5 +1,5 @@
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { ListarMoedasComponent } from './listar-moedas.component';
 
 describe('ListarMoedasComponent', () => {
@@ -8,7 +8,8 @@ describe('ListarMoedasComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [ListarMoedasComponent]
+      declarations: [ListarMoedasComponent],
+      imports: [ HttpClientTestingModule ]
     });
     fixture = TestBed.createComponent(ListarMoedasComponent);
     component = fixture.componentInstance;
