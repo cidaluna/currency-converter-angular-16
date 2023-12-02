@@ -10,12 +10,9 @@ import { MoedaService } from 'src/app/services/moeda.service';
 })
 export class ListarMoedasComponent implements OnInit {
 
-  //public moedasSiglas = ['CAD-BRL','ARS-BRL','GBP-BRL'];
   listaDeMoedas: Moeda[] = [];
 
-  constructor(private moedaService: MoedaService){
-    //console.log('Componente: Chamou constructor listar-moedas');
-  }
+  constructor(private moedaService: MoedaService){}
 
   ngOnInit(): void{
     this.obterMoedas();

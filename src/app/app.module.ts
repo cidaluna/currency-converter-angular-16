@@ -6,15 +6,16 @@ import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ListarMoedasComponent } from './components/listar-moedas/listar-moedas.component';
-import { FormatarHorarioPipe, FormatarTextoPipe, FormatarValorPipe } from './pipes/formatar-dados.pipe';
+import { FormatarCorPipe, FormatarHorarioPipe, FormatarTextoPipe, FormatarValorPipe } from './pipes/formatar-dados.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListarMoedasComponent,
-    FormatarValorPipe,
+    FormatarCorPipe,
+    FormatarHorarioPipe,
     FormatarTextoPipe,
-    FormatarHorarioPipe
+    FormatarValorPipe
   ],
   imports: [
     BrowserModule,

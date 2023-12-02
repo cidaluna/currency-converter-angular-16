@@ -13,7 +13,7 @@
         <p>{{ item['name'] | formatarTextoCard }}</p>
       </div>
       <div class="body-card">
-        <p class="verde">{{ item['bid'] | formatarValorCard }}</p>
+        <p class="{{ item['bid'] | formatarCorCard }}">{{ item['bid'] | formatarValorCard }}</p>
       </div>
       <div class="footer-card">
         <div class="variacao">

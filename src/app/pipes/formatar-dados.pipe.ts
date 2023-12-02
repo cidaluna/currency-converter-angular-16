@@ -14,6 +14,22 @@ export class FormatarValorPipe implements PipeTransform {
 }
 
 @Pipe({
+  name: 'formatarCorCard',
+})
+export class FormatarCorPipe implements PipeTransform {
+  transform(valor: any): string {
+    const numero = Number(valor);
+    if (numero <= 1) {
+      return 'vermelho';
+    } else if (valor <= 5) {
+      return 'verde';
+    } else {
+      return 'azul';
+    }
+  }
+}
+
+@Pipe({
   name: 'formatarTextoCard'
 })
 export class FormatarTextoPipe implements PipeTransform {
