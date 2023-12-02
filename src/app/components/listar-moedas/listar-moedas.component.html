@@ -13,7 +13,7 @@
         <p>{{ item['name'] }}</p>
       </div>
       <div class="body-card">
-        <p class="verde">R$ {{ item['bid'] }}</p>
+        <p class="verde">{{ item['bid'] | formatarNumeroPipe }}</p>
       </div>
       <div class="footer-card">
         <div class="variacao">
@@ -22,7 +22,7 @@
         </div>
         <div class="atualizado">
           <p class="title-footer">Atualizado</p>
-          <p class="text-footer">{{ item['create_date']}}</p>
+          <p class="text-footer">{{ item['create_date'] }}</p>
         </div>
       </div>
     </div>

@@ -32,4 +32,5 @@ export class ListarMoedasComponent implements OnInit {
       }
     );
   }
+
 }

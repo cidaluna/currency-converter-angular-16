@@ -6,11 +6,13 @@ import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ListarMoedasComponent } from './components/listar-moedas/listar-moedas.component';
+import { FormatarNumeroPipe } from './pipes/formatar-numero.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ListarMoedasComponent
+    ListarMoedasComponent,
+    FormatarNumeroPipe
   ],
   imports: [
     BrowserModule,
