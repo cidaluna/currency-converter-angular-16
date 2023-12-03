@@ -6,10 +6,10 @@
 </header>
 <!-- Listagem de Cards de acordo com os dados recebidos da API externa -->
 <main>
-
+  <!-- Abre Conteudo Lista -->
   <div class="conteudo" *ngIf="listaDeMoedas">
 
-    <div class="card" *ngFor="let item of listaDeMoedas">
+    <div class="card" *ngFor="let item of listaDeMoedas"><!-- Abre Card Lista OK -->
       <div class="header-card">
         <p>{{ item['name'] | formatarTextoCard }}</p>
       </div>
@@ -26,12 +26,10 @@
           <p class="text-footer">{{ item['create_date'] | formatarHorarioCard }}</p>
         </div>
       </div>
+    </div> <!-- Fecha Card Lista OK -->
 
 
-    </div>
-
-    <!-- INÍCIO CARD DE ERRO -->
-    <div class="card" *ngIf="erroCard">
+    <div class="card" *ngIf="erroCard"> <!-- *** INICIO CARD ERRO *** -->
       <div class="header-card">
         <p>{{ siglaErro }} </p>
       </div>
@@ -40,8 +38,8 @@
         <br>
         <button (click)="obterMoedas('USD-BRL')">RECARREGAR</button>
       </div>
-    </div>
-    <!-- FIM CARD DE ERRO -->
-  </div>
+    </div> <!-- *** FIM CARD ERRO *** -->
+
+  </div> <!-- Fecha Conteudo Lista -->
 
 </main>
