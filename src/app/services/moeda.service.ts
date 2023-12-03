@@ -1,6 +1,6 @@
 import { HttpClient, HttpErrorResponse, HttpHeaders } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { Observable, catchError, tap, throwError } from "rxjs";
+import { Observable, catchError, throwError } from "rxjs";
 import { environment } from "src/environments/environment";
 import { Moeda } from "../models/moeda.model";
 import { MensagemService } from "./mensagem.service";
@@ -10,44 +10,27 @@ import { MensagemService } from "./mensagem.service";
 })
 export class MoedaService {
 
-  private url = environment.api;
-  sigla = ['CAD-BRL','ARS-BRL','GBP-BRL'];
-
-  moeda_dolar_canadense = 'CAD-BRL';
-  moeda_peso_chileno = 'ARS-BRL';
-  moeda_libra_esterlina = 'GBP-BRL';
-
-  novaLista: Moeda[] = [];
+  private baseUrl = environment.api;
 
   constructor(private http: HttpClient, private mensagemService: MensagemService){}
 
-// novo
-
-//
-
-  // GET /json/last/:moedas
-  getMoeda(v1: string): Observable<Moeda[]>{
+  // Service método GET
+  getMoeda(siglaSolicitada: string): Observable<Moeda[]>{
+    const montaUrl = `${this.baseUrl}${siglaSolicitada}`;
     const httpOptions = {
       headers: new HttpHeaders({ 'Content-Type': 'application/json'
        })
     };
-    return this.http.get<Moeda[]>(this.url + v1, httpOptions)
+    return this.http.get<Moeda[]>(montaUrl, httpOptions)
   .pipe(
-    tap((data) => {
-      //console.log(`Service: Chamou GET na API: ${this.url + this.sigla}`);
-      //console.log('Service: Retornou os dados:',JSON.stringify(data));
-    }
-    ),
     catchError(this.handleError)
   );
 }
 
-  handleError(err: HttpErrorResponse) {
-    let errorMessage = '';
-    if (err.error instanceof ErrorEvent) {
-      errorMessage = 'Algo deu errado!' + err.error.message;
-    } else {
-      errorMessage = 'Erro no request';
+  private handleError(err: HttpErrorResponse) {
+    let errorMessage = 'Ocorreu um erro na requisição das moedas.';
+    if (err.status === 404) {
+      errorMessage = `Moeda especificada não existe! ${err}`;
     }
     return throwError(errorMessage);
   }

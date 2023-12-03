@@ -6,17 +6,37 @@
 </header>
 <!-- Listagem de Cards de acordo com os dados recebidos da API externa -->
 <main>
-  <!-- Abre Conteudo Lista -->
-  <div class="conteudo" *ngIf="listaDeMoedas">
+  <!-- Abre Conteudo -->
+  <div class="conteudo" *ngIf="listaDeMoedas.length > 0">
+    <!-- Abre Card -->
+    <div class="card" *ngFor="let item of listaDeMoedas">
 
-    <div class="card" *ngFor="let item of listaDeMoedas"><!-- Abre Card Lista OK -->
-      <div class="header-card">
+      <!-- #### Abre Header Card -->
+      <div *ngIf="item['name'] !== undefined" class="header-card">
         <p>{{ item['name'] | formatarTextoCard }}</p>
       </div>
-      <div class="body-card">
+
+      <!-- #### Abre Header Error Card -->
+      <div *ngIf="item['name'] == undefined" class="header-card">
+        <p>Erro</p>
+      </div>
+
+      <!-- #### Abre Body Card -->
+      <div *ngIf="item['bid']" class="body-card">
         <p class="{{ item['bid'] | formatarCorCard }}">{{ item['bid'] | formatarValorCard }}</p>
       </div>
-      <div class="footer-card">
+
+      <!--  #### Abre Body Error Card  -->
+      <div *ngIf="!item['bid']" class="body-card">
+        <div class="text-error-body-card">
+          <p>Algo deu errado</p>
+          <br>
+          <button (click)="recarregarMoeda('USD-BRL')">RECARREGAR</button>
+        </div>
+      </div>
+
+      <!--  #### Abre Footer Card  -->
+      <div *ngIf="item['pctChange'] !== undefined" class="footer-card">
         <div class="variacao">
           <p class="title-footer">Variação (%)</p>
           <p class="text-footer">{{ item['pctChange'] }}</p>
@@ -26,20 +46,9 @@
           <p class="text-footer">{{ item['create_date'] | formatarHorarioCard }}</p>
         </div>
       </div>
-    </div> <!-- Fecha Card Lista OK -->
 
+    </div> <!-- Fecha Card -->
 
-    <div class="card" *ngIf="erroCard"> <!-- *** INICIO CARD ERRO *** -->
-      <div class="header-card">
-        <p>{{ siglaErro }} </p>
-      </div>
-      <div class="text-error-body-card">
-        <p>Algo deu errado</p>
-        <br>
-        <button (click)="obterMoedas('USD-BRL')">RECARREGAR</button>
-      </div>
-    </div> <!-- *** FIM CARD ERRO *** -->
-
-  </div> <!-- Fecha Conteudo Lista -->
+  </div> <!-- Fecha Conteudo -->
 
 </main>
