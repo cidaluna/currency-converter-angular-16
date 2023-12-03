@@ -28,9 +28,9 @@ export class MoedaService {
 }
 
   private handleError(err: HttpErrorResponse) {
-    let errorMessage = 'Ocorreu um erro na requisição das moedas.';
+    let errorMessage = '[SERVICE]: Ocorreu um erro na requisição das moedas.';
     if (err.status === 404) {
-      errorMessage = `Moeda especificada não existe! ${err}`;
+      errorMessage = `[SERVICE]: Moeda especificada não existe! ${err}`;
     }
     return throwError(errorMessage);
   }

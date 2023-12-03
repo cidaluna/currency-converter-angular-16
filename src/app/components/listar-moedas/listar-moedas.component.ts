@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Moeda } from 'src/app/models/moeda.model';
 import { MoedaService } from 'src/app/services/moeda.service';
 
 
@@ -9,7 +10,7 @@ import { MoedaService } from 'src/app/services/moeda.service';
 })
 export class ListarMoedasComponent implements OnInit {
 
-  listaDeMoedas: any[] = [];
+  listaDeMoedas: Moeda[] = [];
   erroCard: boolean = false;
   siglaErro: string = '';
 
@@ -20,7 +21,7 @@ export class ListarMoedasComponent implements OnInit {
   }
 
   obterMoedas(){
-    const carregarTresMoedas = ['CAD-BRL','ARS-BRL','GBP-BRL'];
+    const carregarTresMoedas = ['CAD-BRL','KARS-BRL','GBP-BRL'];
 
     carregarTresMoedas.forEach(sigla => {
       this.moedaService.getMoeda(sigla)
@@ -38,11 +39,14 @@ export class ListarMoedasComponent implements OnInit {
             }
           //const chaves =  Object.keys(data);
           //console.log('[COMP - NEXT]: Método obterMoedas a partir dos Objetos x Chaves: ', chaves);
+          const moedaName = Object.keys(data).map(key => data[key]['name']);
+          console.log('[COMP - NEXT]: Pegar o name da Moeda:', moedaName);
         },
         error: (error: any) => {
          //console.error(`[COMP - ERROR]: Erro ao carregar as moedas ${sigla}`, error);
-         this.listaDeMoedas.push({ error, sigla });
+         this.listaDeMoedas.push({ error });
          this.erroCard = true;
+         console.log('[COMP - ERROR]: '+ error);
         },
         complete: () => {
           console.log('[COMP - COMPLETE]: complete');
@@ -60,24 +64,20 @@ export class ListarMoedasComponent implements OnInit {
     }
   }
 
-  recarregarMoeda(sigla: string) {
-      // Encontrar o índice da moeda na lista
-      const index = this.listaDeMoedas.findIndex(item => item.sigla === sigla);
-
-      if (index !== -1) {
-        // Remover a moeda da lista
-        this.listaDeMoedas.splice(index, 1);
-
-        // Recarregar a moeda
-        this.moedaService.getMoeda(sigla).subscribe(
-          (data: any) => {
-            this.listaDeMoedas.push(data);
-          },
-          (error: any) => {
-            console.error(`Erro ao carregar moeda ${sigla}:`, error);
-            this.listaDeMoedas.push({ error, sigla });
-          }
-        );
-      }
-    }
+  // refazer o recarregar
+  recarregarMoeda(siglaInformada: string) {
+    this.moedaService.getMoeda(siglaInformada)
+    .subscribe({
+      next: (data: any) => {
+        const moeda = Object.keys(data).map(key => data[key]);
+        this.listaDeMoedas = moeda;
+        this.erroCard = false;
+      },
+      error: (error: any) => {
+       this.listaDeMoedas = error;
+       this.erroCard = true;
+      },
+      complete: () => {}
+    });
+  };
 }
