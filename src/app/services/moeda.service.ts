@@ -17,16 +17,21 @@ export class MoedaService {
   moeda_peso_chileno = 'ARS-BRL';
   moeda_libra_esterlina = 'GBP-BRL';
 
+  novaLista: Moeda[] = [];
+
   constructor(private http: HttpClient, private mensagemService: MensagemService){}
 
+// novo
+
+//
 
   // GET /json/last/:moedas
-  getMoeda(): Observable<Moeda[]>{
+  getMoeda(v1: string): Observable<Moeda[]>{
     const httpOptions = {
       headers: new HttpHeaders({ 'Content-Type': 'application/json'
        })
     };
-    return this.http.get<Moeda[]>(this.url + this.sigla, httpOptions)
+    return this.http.get<Moeda[]>(this.url + v1, httpOptions)
   .pipe(
     tap((data) => {
       //console.log(`Service: Chamou GET na API: ${this.url + this.sigla}`);

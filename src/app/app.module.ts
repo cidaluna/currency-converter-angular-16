@@ -6,6 +6,7 @@ import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ListarMoedasComponent } from './components/listar-moedas/listar-moedas.component';
+import { LoadingComponent } from './components/loading/loading.component';
 import { FormatarCorPipe, FormatarHorarioPipe, FormatarTextoPipe, FormatarValorPipe } from './pipes/formatar-dados.pipe';
 
 @NgModule({
@@ -15,7 +16,8 @@ import { FormatarCorPipe, FormatarHorarioPipe, FormatarTextoPipe, FormatarValorP
     FormatarCorPipe,
     FormatarHorarioPipe,
     FormatarTextoPipe,
-    FormatarValorPipe
+    FormatarValorPipe,
+    LoadingComponent
   ],
   imports: [
     BrowserModule,
