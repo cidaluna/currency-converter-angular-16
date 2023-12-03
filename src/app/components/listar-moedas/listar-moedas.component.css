@@ -135,6 +135,45 @@ main{
   line-height: normal;
 }
 
+.text-error-body-card{
+  display: flex;
+  width: auto;
+  height: 72%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.text-error-body-card p{
+  color: #717171;
+  text-align: center;
+  font-family: "Poppins", Helvetica, Arial, sans-serif;
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.text-error-body-card button{
+  color: #717171;
+  text-align: center;
+  font-family: "Poppins", Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-shrink: 0;
+  border-radius: 10px;
+  background: #F4F4F4;
+  border: none;
+  margin-top: 16px;
+  padding: 15px 20px;
+  cursor: pointer;
+}
+
 .atualizado{
   width: 49%;
   height: auto;

@@ -30,8 +30,21 @@
 
   </div>
 
-  <div *ngIf="listaDeMoedas.length === 0">
-    <p>Não existem moedas para listar no momento.</p>
+<!-- CARD DE ERRO -->
+  <div class="conteudo">
+
+    <div class="card" *ngFor="let item of listaDeMoedas">
+      <div class="header-card">
+        <p>{{ item['name'] | formatarTextoCard }}</p>
+      </div>
+      <div class="text-error-body-card">
+        <p>Algo deu errado</p>
+        <br>
+        <button>RECARREGAR</button>
+      </div>
+    </div>
+
   </div>
+
 
 </main>
