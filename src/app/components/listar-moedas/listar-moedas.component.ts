@@ -15,6 +15,9 @@ export class ListarMoedasComponent implements OnInit {
   erroCard: boolean = false;
   siglaErro: string = '';
 
+  // Salvar um estado na aplicação
+  cache = new Map<string,Moeda[]>();
+
   constructor(private moedaService: MoedaService, public loading: LoadingService){}
 
   ngOnInit(): void{
@@ -27,27 +30,32 @@ export class ListarMoedasComponent implements OnInit {
     carregarTresMoedas.forEach(sigla => {
       this.moedaService.getMoeda(sigla)
       .subscribe({
-        next: (data: any) => {
-          const moeda = Object.keys(data).map(key => data[key]);
-          const moedaExiste = this.verificaMoedaExiste(moeda[0],sigla);
+        next: (data: Moeda[]) => {
+          if (this.cache.has(sigla)) {
+            console.log(`[COMP]: Dados da moeda ${sigla} carregados do cache!`);
+          } else {
+            console.log(`[COMP]: Dados da moeda ${sigla} carregados pela primeira vez!`);
+          }
 
-            if(moedaExiste){
-              this.listaDeMoedas.push(moeda[0]);
-              this.erroCard = false;
-            }else {
-              this.erroCard = true;
-              this.siglaErro = sigla;
-            }
-          //const chaves =  Object.keys(data);
-          //console.log('[COMP - NEXT]: Método obterMoedas a partir dos Objetos x Chaves: ', chaves);
-          const moedaName = Object.keys(data).map(key => data[key]['name']);
-          console.log('[COMP - NEXT]: Pegar o name da Moeda:', moedaName);
+          const moeda = data;
+          const moedaExiste = this.verificaMoedaExiste(moeda[0], sigla);
+
+          if (moedaExiste) {
+            this.listaDeMoedas.push(moeda[0]);
+            this.erroCard = false;
+          } else {
+            this.erroCard = true;
+            this.siglaErro = sigla;
+          }
+
+          console.log('[COMP - NEXT]: Moeda ', moeda);
+          console.log('[COMP - NEXT]: MoedaExiste', moedaExiste);
         },
-        error: (error: any) => {
-         //console.error(`[COMP - ERROR]: Erro ao carregar as moedas ${sigla}`, error);
-         this.listaDeMoedas.push({ error });
-         this.erroCard = true;
-         console.log('[COMP - ERROR]: '+ error);
+        error: (error) => {
+          const errorObject = { error: error };
+          this.listaDeMoedas.push(errorObject);
+          this.erroCard = true;
+          console.log('[COMP - ERROR]: ' + error);
         },
         complete: () => {
           console.log('[COMP - COMPLETE]: complete');
@@ -56,7 +64,7 @@ export class ListarMoedasComponent implements OnInit {
     });
   }
 
-  verificaMoedaExiste(moeda: any, sigla: string): any{
+  verificaMoedaExiste(moeda: any, sigla: string){
     if (moeda && moeda['name'] !== undefined && !isNaN(parseFloat(moeda['bid']))) {
       return moeda;
     } else {
