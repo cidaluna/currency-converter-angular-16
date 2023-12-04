@@ -6,7 +6,8 @@ const routes: Routes = [
   // cada rota é um endereço url e o nome do componente que deseja exibir na tela
   {
     path:'', component: ListarMoedasComponent
-  }
+  },
+  { path: '**', redirectTo: '', pathMatch:'full', component: ListarMoedasComponent }
 ];
 
 @NgModule({

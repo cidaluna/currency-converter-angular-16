@@ -7,6 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ListarMoedasComponent } from './components/listar-moedas/listar-moedas.component';
 import { LoadingComponent } from './components/loading/loading.component';
+import { CacheInterceptor } from './interceptors/cache.interceptor';
 import { LoadingInterceptor } from './interceptors/loading.interceptor';
 import { FormatarCorPipe, FormatarHorarioPipe, FormatarTextoPipe, FormatarValorPipe } from './pipes/formatar-dados.pipe';
 
@@ -39,6 +40,11 @@ const MODULES = [
     {
       provide: HTTP_INTERCEPTORS,
       useClass: LoadingInterceptor,
+      multi: true
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: CacheInterceptor,
       multi: true
     }
   ],
