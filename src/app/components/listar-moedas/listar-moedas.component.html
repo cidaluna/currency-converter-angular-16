@@ -6,12 +6,13 @@
 </header>
 <!-- Listagem de Cards de acordo com os dados recebidos da API externa -->
 <main>
-  <!-- Carregando Loading na página -->
-  <app-loading class="spinner"></app-loading>
   <!-- Abre Conteudo -->
   <div class="conteudo" *ngIf="listaDeMoedas.length > 0">
     <!-- Abre Card -->
     <div class="card" *ngFor="let item of listaDeMoedas">
+
+      <!-- [...LOADING...] -->
+      <app-loading class="spinner"></app-loading>
 
       <!-- #### Abre Header Card -->
       <div *ngIf="item['name'] !== undefined" class="header-card">

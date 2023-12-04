@@ -61,14 +61,21 @@ main{
   box-shadow: 0px 0px 6px 2px rgba(204, 204, 204, 0.25);
 }
 
-/* Loading... */
+/* Loading... na página */
 .spinner{
-  z-index: 2000;
   display: flex;
-  background-color: #DD4B4B;
-  flex-direction: column;
   justify-content: center;
-  flex-shrink: 0;
+  align-items: center;
+  top: 0;
+  left: 0;
+  z-index: 2000;
+}
+
+.spinner img{
+  width: 100px;
+  height: 100px;
+  background-color: #FFFFFF;
+  color: #717171;
 }
 
 .header-card{

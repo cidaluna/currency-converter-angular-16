@@ -22,7 +22,7 @@ export class ListarMoedasComponent implements OnInit {
   }
 
   obterMoedas(){
-    const carregarTresMoedas = ['CAD-BRL','ARS-BRL','GWBP-BRL'];
+    const carregarTresMoedas = ['CAD-BRL','ARS-BRL','GBP-BRL'];
 
     carregarTresMoedas.forEach(sigla => {
       this.moedaService.getMoeda(sigla)

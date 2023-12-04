@@ -6,7 +6,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 })
 export class LoadingService {
   // a origem dos dados está aqui, fornecido valor inicial false
-  private loadingSubject = new BehaviorSubject<boolean>(true);
+  private loadingSubject = new BehaviorSubject<boolean>(false);
 
   loading$: Observable<boolean> = this.loadingSubject.asObservable();
 
