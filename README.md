@@ -1,8 +1,6 @@
 # Desafio Currency Converter
 
-Este projeto foi desenvolvido com o [Angular CLI](https://github.com/angular/angular-cli) versão 16.2.0 e Node.JS versão 18.10.0.
-
-Verifique a compatibilidade do Angular x Node.JS em [Angular versions](https://angular.io/guide/versions).
+O Projeto Currency Converter é uma aplicação desenvolvida em Angular, que consome a ** API de Cotações AwesomeAPI ** em tempo real, para mostrar a conversão de três moedas para Real brasileiro (BRL).
 
 ![Página Web com três cards representando o resultado de conversão de moedas retornados via API](https://github.com/cidaluna/currency-converter-angular-16/blob/main/src/assets/tela-conversao-de-moedas-para-o-Real-Brasileiro-em-Angular-16-Cida-Luna.PNG)
 
@@ -10,9 +8,12 @@ Verifique a compatibilidade do Angular x Node.JS em [Angular versions](https://a
 
 Para rodar essa aplicação, siga os próximos passos.
 
-### Pre requisitos
+### Requisitos
 
-- [Node.js](https://nodejs.org/)
+* Angular 16.2.0 [Angular CLI](https://github.com/angular/angular-cli)
+* Node.JS versão 18.10.0 [Node.js](https://nodejs.org/)
+
+Verifique a compatibilidade do Angular x Node.JS em [Angular versions](https://angular.io/guide/versions).
 
 ### Clonando o projeto
 
