@@ -63,12 +63,12 @@ main{
 
 /* Loading... */
 .spinner{
-    width: 430px;
-    height: 428px;
-    z-index: 2000;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  z-index: 2000;
+  display: flex;
+  background-color: #DD4B4B;
+  flex-direction: column;
+  justify-content: center;
+  flex-shrink: 0;
 }
 
 .header-card{

@@ -1,6 +1,9 @@
 # Desafio Currency Converter
 
 O Projeto Currency Converter é uma aplicação desenvolvida em Angular, que consome a **API de Cotações AwesomeAPI** em tempo real, para mostrar a conversão de três moedas para Real brasileiro (BRL).
+- Dólar Canadense (CAD)
+- Peso Argentino (ARS)
+- Libra Esterlina (GBP)
 
 ![Página Web com três cards representando o resultado de conversão de moedas retornados via API](https://github.com/cidaluna/currency-converter-angular-16/blob/main/src/assets/tela-conversao-de-moedas-para-o-Real-Brasileiro-em-Angular-16-Cida-Luna.PNG)
 

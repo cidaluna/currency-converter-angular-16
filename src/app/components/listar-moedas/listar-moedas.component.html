@@ -6,6 +6,8 @@
 </header>
 <!-- Listagem de Cards de acordo com os dados recebidos da API externa -->
 <main>
+  <!-- Carregando Loading na página -->
+  <app-loading class="spinner"></app-loading>
   <!-- Abre Conteudo -->
   <div class="conteudo" *ngIf="listaDeMoedas.length > 0">
     <!-- Abre Card -->
@@ -23,7 +25,7 @@
 
       <!-- #### Abre Body Card -->
       <div *ngIf="item['bid']" class="body-card">
-        <p class="{{ item['bid'] | formatarCorCard }}">{{ item['bid'] | formatarValorCard }}</p>
+          <p class="{{ item['bid'] | formatarCorCard }}">{{ item['bid'] | formatarValorCard }}</p>
       </div>
 
       <!--  #### Abre Body Error Card Alterado  -->
@@ -32,7 +34,6 @@
           <p>Algo deu errado</p>
           <br>
           <button (click)="recarregarMoeda('USD-BRL')">RECARREGAR</button>
-          <app-loading class="spinner"></app-loading>
         </div>
       </div>
 
