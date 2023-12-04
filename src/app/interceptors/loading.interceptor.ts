@@ -18,6 +18,7 @@ export class LoadingInterceptor implements HttpInterceptor {
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
     if(this.activeRequests === 0){ // se nao tem nenhuma requisicao feita, mostra o loading material spinner
       this.loadingService.show();
+      console.log('Chamou loading show');
     }
     this.activeRequests++;  // incrementa 1
 
@@ -28,6 +29,7 @@ export class LoadingInterceptor implements HttpInterceptor {
 
         if(this.activeRequests === 0){
           this.loadingService.hide();
+          console.log('Chamou loading hide');
         }
       })
     )

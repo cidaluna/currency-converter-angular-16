@@ -9,25 +9,33 @@ import { ListarMoedasComponent } from './components/listar-moedas/listar-moedas.
 import { LoadingComponent } from './components/loading/loading.component';
 import { FormatarCorPipe, FormatarHorarioPipe, FormatarTextoPipe, FormatarValorPipe } from './pipes/formatar-dados.pipe';
 
+const COMPONENTS = [
+  AppComponent,
+  ListarMoedasComponent,
+  FormatarCorPipe,
+  FormatarHorarioPipe,
+  FormatarTextoPipe,
+  FormatarValorPipe,
+  LoadingComponent
+]
+
+const MODULES = [
+  BrowserModule,
+  AppRoutingModule,
+  HttpClientModule,
+  RouterModule,
+  CommonModule
+]
 @NgModule({
   declarations: [
-    AppComponent,
-    ListarMoedasComponent,
-    FormatarCorPipe,
-    FormatarHorarioPipe,
-    FormatarTextoPipe,
-    FormatarValorPipe,
-    LoadingComponent
+    COMPONENTS
   ],
   imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    RouterModule,
-    CommonModule
+    MODULES
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [],
+  exports:[COMPONENTS, MODULES],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

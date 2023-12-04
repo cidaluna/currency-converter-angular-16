@@ -3,7 +3,6 @@ import { Injectable } from "@angular/core";
 import { Observable, catchError, throwError } from "rxjs";
 import { environment } from "src/environments/environment";
 import { Moeda } from "../models/moeda.model";
-import { MensagemService } from "./mensagem.service";
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +11,7 @@ export class MoedaService {
 
   private baseUrl = environment.api;
 
-  constructor(private http: HttpClient, private mensagemService: MensagemService){}
+  constructor(private http: HttpClient){}
 
   // Service método GET
   getMoeda(siglaSolicitada: string): Observable<Moeda[]>{
@@ -33,10 +32,6 @@ export class MoedaService {
       errorMessage = `[SERVICE]: Moeda especificada não existe! ${err}`;
     }
     return throwError(errorMessage);
-  }
-
-  private log(message: string): void{
-    this.mensagemService.add(`Moedas: ${message}!!`)
   }
 
 }

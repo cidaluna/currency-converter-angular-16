@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Moeda } from 'src/app/models/moeda.model';
+import { LoadingService } from 'src/app/services/loading.service';
 import { MoedaService } from 'src/app/services/moeda.service';
 
 
@@ -14,14 +15,14 @@ export class ListarMoedasComponent implements OnInit {
   erroCard: boolean = false;
   siglaErro: string = '';
 
-  constructor(private moedaService: MoedaService){}
+  constructor(private moedaService: MoedaService, public loading: LoadingService){}
 
   ngOnInit(): void{
     this.obterMoedas();
   }
 
   obterMoedas(){
-    const carregarTresMoedas = ['CAD-BRL','KARS-BRL','GBP-BRL'];
+    const carregarTresMoedas = ['CAD-BRL','ARS-BRL','GWBP-BRL'];
 
     carregarTresMoedas.forEach(sigla => {
       this.moedaService.getMoeda(sigla)
