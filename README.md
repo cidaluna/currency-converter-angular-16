@@ -100,6 +100,17 @@ echo "# currency-converter-angular-16" >> README.md
   git push -u origin main 
 ```
 
-## Desenvolvedora
 
-By Cida Luna 11/2023.
+## Considerações
+
+Agradeço a sua visita neste repositório, se desejar, compartilhe com outras pessoas!!
+
+Espero continuar nesse modo lifelong learning, colaborar em diversos projetos, compartilhar aprendizados e constantemente melhorar a experiência da pessoa que chamamos de "usuário final" das aplicações.
+
+> ### Se possível
+
+- ⭐️ Marque uma estrela neste projeto.
+
+- 🐛 Encontre e relate issues.
+
+Desenvolvido com ❤️ por [Cida Luna](https://www.linkedin.com/in/aparecidaluna)
